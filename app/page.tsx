@@ -50,29 +50,30 @@ export default function Home() {
         {/* Main Content - Inside Card */}
         <div className="h-full flex flex-col items-center px-4 md:px-8 pt-12 md:pt-16 pb-24 md:pb-12 overflow-y-auto">
           {/* Centerpiece Typography */}
-          <div className="text-center mb-8 md:mb-20 w-full">
+          <div className="text-center mb-32 md:mb-20 w-full">
             <img
               src="/img/spiral.png"
               alt=""
               className="mx-auto mb-3 md:mb-8 w-20 h-20 md:w-32 md:h-32"
             />
-            <h1 className="text-3xl md:text-5xl font-medium tracking-tight text-zinc-900 mb-2 md:mb-6 px-2">
-             Creative Technology for Humanity
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-8 md:mb-16 px-2">
+             Creative Technology for Purpose
             </h1>
             <h2 className="text-sm md:text-lg text-zinc-500 font-normal px-2">
-            tracing the cultural lineage of modern interfaces.
+            - Sarah Kim
             </h2>
           </div>
 
           {/* Mission Statement */}
-          <div className="w-full max-w-2xl text-center mb-8 md:mb-24 px-2">
+          <div className="w-full max-w-2xl text-center mb-32 md:mb-24 px-2">
             <p className="text-xs md:text-base text-zinc-600 leading-relaxed">
-            Sarah designs digital systems at the intersection of psychology and culture. She build tools that map human attention and restore systemic integrity.
+            Sarah designs digital systems at the intersection of psychology, ethics, and culture. <br>
+            </br>She develops tools that map human attention to restore systemic integrity and connection.
             </p>
           </div>
 
           {/* Practice Index */}
-          <div className="w-full max-w-4xl mb-8 md:mb-24">
+          <div className="w-full max-w-4xl mb-32 md:mb-24">
             <h3 className="text-[8px] md:text-[10px] text-zinc-500 uppercase tracking-widest mb-3 md:mb-8 text-center">
               INDEX
             </h3>
@@ -229,7 +230,7 @@ export default function Home() {
 
           {/* Project Artifact - seventhsense.space */}
           <div
-            className="w-full max-w-2xl mt-8 md:mt-24 mb-8 md:mb-0"
+            className="w-full max-w-2xl mt-32 md:mt-24 mb-8 md:mb-0"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
