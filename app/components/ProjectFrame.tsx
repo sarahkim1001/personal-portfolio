@@ -66,7 +66,7 @@ export default function ProjectFrame({ title, role, narrative, metadata, url, im
         {/* Background Image/Preview */}
         {imageUrl && (
           <motion.div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center md:opacity-100 opacity-40"
             style={{ backgroundImage: `url(${imageUrl})` }}
             animate={{
               opacity: isHovered ? 0.4 : 1,
@@ -81,8 +81,9 @@ export default function ProjectFrame({ title, role, narrative, metadata, url, im
         {/* Content Overlay */}
         <div className="absolute inset-0 flex flex-col justify-center items-center p-8 z-10">
           {/* Default State - Title and Role */}
+          {/* Hide on mobile, show on desktop when not hovered */}
           <motion.div
-            className="text-center"
+            className="text-center hidden md:block"
             animate={{
               y: isHovered ? -20 : 0,
               opacity: isHovered ? 0 : 1,
@@ -97,19 +98,39 @@ export default function ProjectFrame({ title, role, narrative, metadata, url, im
             <h3 className="text-2xl font-medium text-zinc-900 mb-2">{title}</h3>
             <p className="text-sm text-zinc-500">{role}</p>
           </motion.div>
+          
+          {/* Mobile: Always show title and role at top */}
+          <div className="text-center md:hidden mb-4">
+            <h3 className="text-xl font-medium text-zinc-900 mb-2">{title}</h3>
+            <p className="text-sm text-zinc-500">{role}</p>
+          </div>
 
-          {/* Hover State - Narrative, Metadata, and CTA */}
-          {isHovered && (
-            <motion.div
-              className="absolute inset-0 flex flex-col justify-center p-8 max-w-2xl mx-auto space-y-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                duration: 0.3,
-                delay: 0.2,
-                ease: "easeOut",
-              }}
-            >
+          {/* Mobile: Always show narrative, metadata, and CTA */}
+          <div className="md:hidden flex flex-col p-8 space-y-4">
+            <p className="text-sm text-zinc-600 leading-relaxed">
+              {narrative}
+            </p>
+            <p className="text-sm text-zinc-500">
+              {metadata}
+            </p>
+            <div className="pt-4">
+              <span className="text-sm font-medium text-zinc-900 border-b border-zinc-900">
+                Visit Site
+              </span>
+            </div>
+          </div>
+
+          {/* Desktop: Hover State - Narrative, Metadata, and CTA */}
+          <motion.div
+            className="hidden md:flex absolute inset-0 flex-col justify-center p-8 max-w-2xl mx-auto space-y-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isHovered ? 1 : 0 }}
+            transition={{
+              duration: 0.3,
+              delay: 0.2,
+              ease: "easeOut",
+            }}
+          >
               <motion.p
                 className="text-sm text-zinc-600 leading-relaxed"
                 initial={{ opacity: 0, y: 10 }}
@@ -151,7 +172,6 @@ export default function ProjectFrame({ title, role, narrative, metadata, url, im
                 </span>
               </motion.div>
             </motion.div>
-          )}
         </div>
       </Link>
       </motion.div>

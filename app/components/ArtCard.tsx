@@ -42,9 +42,10 @@ export default function ArtCard({ title, inquiry, medium, year, status, illustra
       }}
     >
       {/* Initial View - Illustration (only if provided) */}
+      {/* Hide on mobile, show on desktop when not hovered */}
       {illustration && (
         <motion.div
-          className="absolute inset-0 flex flex-col items-center justify-center p-8"
+          className="absolute inset-0 flex flex-col items-center justify-center p-8 hidden md:flex"
           animate={{
             opacity: isHovered ? 0.3 : 1,
             scale: isHovered ? 0.95 : 1,
@@ -58,18 +59,29 @@ export default function ArtCard({ title, inquiry, medium, year, status, illustra
         </motion.div>
       )}
 
-      {/* Hover State - Artistic Inquiry Text */}
-      {isHovered && (
-        <motion.div
-          className="absolute inset-0 flex flex-col justify-center p-8 z-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.3,
-            delay: 0.1,
-            ease: "easeOut",
-          }}
-        >
+      {/* Mobile: Always show inquiry text */}
+      <div className="md:hidden flex flex-col justify-center p-8 z-10">
+        <div className="max-w-2xl mx-auto space-y-4">
+          <h3 className="text-xl font-medium text-zinc-900 mb-4">
+            {title}
+          </h3>
+          <p className="text-sm text-zinc-600 leading-relaxed">
+            {inquiry}
+          </p>
+        </div>
+      </div>
+
+      {/* Desktop: Hover State - Artistic Inquiry Text */}
+      <motion.div
+        className="hidden md:flex absolute inset-0 flex flex-col justify-center p-8 z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isHovered ? 1 : 0 }}
+        transition={{
+          duration: 0.3,
+          delay: 0.1,
+          ease: "easeOut",
+        }}
+      >
           <div className="max-w-2xl mx-auto space-y-4">
             <motion.h3
               className="text-xl font-medium text-zinc-900 mb-4"
@@ -97,14 +109,14 @@ export default function ArtCard({ title, inquiry, medium, year, status, illustra
             </motion.p>
           </div>
         </motion.div>
-      )}
 
       {/* Metadata - Spec Sheet Info at Bottom */}
+      {/* Always visible on mobile, opacity changes on desktop hover */}
       <motion.div
         className="absolute bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-sm border-t border-zinc-100"
         initial={{ opacity: 0, y: 10 }}
         animate={{
-          opacity: isHovered ? 1 : 0.7,
+          opacity: isHovered ? 1 : 1,
           y: 0,
         }}
         transition={{

@@ -110,9 +110,12 @@ export default function Home() {
                   Functional Design
                 </h4>
                 
-                {/* Description - Hidden by default, fades in on hover */}
+                {/* Description - Always visible on mobile, fades in on hover for desktop */}
+                <p className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-4 block md:hidden">
+                  Auditing digital interfaces to build systems that support cognitive autonomy and user integrity.
+                </p>
                 <motion.p
-                  className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-4"
+                  className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-4 hidden md:block"
                   animate={{ opacity: practiceIndexHover.card1 ? 1 : 0 }}
                   transition={{
                     duration: 0.4,
@@ -156,9 +159,12 @@ export default function Home() {
                   Speculative Art
                 </h4>
                 
-                {/* Description - Hidden by default, fades in on hover */}
+                {/* Description - Always visible on mobile, fades in on hover for desktop */}
+                <p className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-4 block md:hidden">
+                  Mapping the behavioral impact of emerging media through mixed-media research and genealogical traces.
+                </p>
                 <motion.p
-                  className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-4"
+                  className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-4 hidden md:block"
                   animate={{ opacity: practiceIndexHover.card2 ? 1 : 0 }}
                   transition={{
                     duration: 0.4,
@@ -202,9 +208,12 @@ export default function Home() {
                   Cultural Research
                 </h4>
                 
-                {/* Description - Hidden by default, fades in on hover */}
+                {/* Description - Always visible on mobile, fades in on hover for desktop */}
+                <p className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-4 block md:hidden">
+                  Investigating the intersection of human psychology, sociology, and digital sovereignty.
+                </p>
                 <motion.p
-                  className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-4"
+                  className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-4 hidden md:block"
                   animate={{ opacity: practiceIndexHover.card3 ? 1 : 0 }}
                   transition={{
                     duration: 0.4,
@@ -256,8 +265,9 @@ export default function Home() {
               </motion.div>
 
               {/* Document Content - Folder/Dossier Opening Effect */}
+              {/* Always expanded on mobile, hover on desktop */}
               <motion.div
-                className="p-4 md:p-6 overflow-hidden"
+                className="p-4 md:p-6 overflow-hidden max-h-[1000px] md:max-h-[100px]"
                 animate={{
                   maxHeight: isHovered ? "1000px" : "100px",
                 }}
@@ -266,7 +276,8 @@ export default function Home() {
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
               >
-                {isHovered ? (
+                {/* Show expanded content on mobile always, on desktop only when hovered */}
+                <div className="md:hidden">
                   <motion.div
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -285,24 +296,56 @@ export default function Home() {
                     <div className="mt-6 pt-4 border-t border-zinc-100">
                       <Link
                         href="https://seventhsense.space"
-            target="_blank"
-            rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-sm font-medium text-zinc-900 border-b border-zinc-900 hover:border-zinc-600 transition-colors inline-block"
                       >
                         [ Enter Space ]
                       </Link>
                     </div>
                   </motion.div>
-                ) : (
-                  <motion.p
-                    className="text-sm text-zinc-500"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    A research-led platform examining the behavioral impact of emerging media and proposing frameworks for intentional digital environments.
-                  </motion.p>
-                )}
+                </div>
+                
+                {/* Desktop: Show expanded content only on hover */}
+                <div className="hidden md:block">
+                  {isHovered ? (
+                    <motion.div
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: 0.2,
+                        ease: [0.25, 0.1, 0.25, 1],
+                      }}
+                    >
+                      <p className="text-sm text-zinc-600 leading-relaxed mb-4">
+                        Launched in January 2026, seventhsense.space is a research-led platform exploring the intersection of human psychology and digital systems. The project functions as an 'integrity layer' for contemporary technoculture, performing audits on how modern interfaces reconfigure human attention and identity.
+                      </p>
+                      <p className="text-sm text-zinc-500">
+                        Inspired by the work of Donna Haraway, the platform investigates the 'cyborgian organism'—the lived reality of being a hybrid of biology and technology in the Information Age.
+                      </p>
+                      <div className="mt-6 pt-4 border-t border-zinc-100">
+                        <Link
+                          href="https://seventhsense.space"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-medium text-zinc-900 border-b border-zinc-900 hover:border-zinc-600 transition-colors inline-block"
+                        >
+                          [ Enter Space ]
+                        </Link>
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.p
+                      className="text-sm text-zinc-500"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      A research-led platform examining the behavioral impact of emerging media and proposing frameworks for intentional digital environments.
+                    </motion.p>
+                  )}
+                </div>
               </motion.div>
             </motion.div>
           </div>

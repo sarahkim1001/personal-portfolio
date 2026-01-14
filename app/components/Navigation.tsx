@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { href: "/", label: "home" },
@@ -36,15 +38,22 @@ export default function Navigation() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.slice(1).map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-zinc-900 hover:opacity-70 transition-opacity"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.slice(1).map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors ${
+                    isActive 
+                      ? "text-zinc-600 border-b border-zinc-600 pb-1" 
+                      : "text-zinc-900 hover:opacity-70"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Mobile Menu Trigger */}
@@ -69,16 +78,23 @@ export default function Navigation() {
       >
         <div className="h-full flex flex-col items-center justify-center">
           <nav className="flex flex-col items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                className="text-3xl font-medium text-zinc-900 hover:opacity-70 transition-opacity"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className={`text-3xl font-medium transition-colors ${
+                    isActive 
+                      ? "text-zinc-600 border-b-2 border-zinc-600 pb-2" 
+                      : "text-zinc-900 hover:opacity-70"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       </div>
