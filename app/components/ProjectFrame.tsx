@@ -37,7 +37,7 @@ export default function ProjectFrame({ title, role, narrative, metadata, url, im
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
-        className="block relative aspect-video bg-white border overflow-hidden"
+        className="block relative md:aspect-video min-h-[600px] md:min-h-0 bg-white border overflow-hidden"
         animate={{
           borderColor: isHovered ? "rgb(161 161 170)" : "rgb(228 228 231)",
         }}
@@ -56,8 +56,8 @@ export default function ProjectFrame({ title, role, narrative, metadata, url, im
       >
         {/* Coordinates */}
         {coordinates && (
-          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20">
-            <p className="text-[10px] tracking-widest text-zinc-400 font-mono">
+          <div className="absolute top-2 md:top-4 left-1/2 transform -translate-x-1/2 z-20">
+            <p className="text-[8px] md:text-[10px] tracking-widest text-zinc-400 font-mono">
               {coordinates}
             </p>
           </div>
@@ -79,7 +79,7 @@ export default function ProjectFrame({ title, role, narrative, metadata, url, im
         )}
 
         {/* Content Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center p-8 z-10">
+        <div className="absolute inset-0 flex flex-col justify-center items-center p-4 md:p-8 z-10">
           {/* Default State - Title and Role */}
           {/* Hide on mobile, show on desktop when not hovered */}
           <motion.div
@@ -100,21 +100,21 @@ export default function ProjectFrame({ title, role, narrative, metadata, url, im
           </motion.div>
           
           {/* Mobile: Always show title and role at top */}
-          <div className="text-center md:hidden mb-4">
-            <h3 className="text-xl font-medium text-zinc-900 mb-2">{title}</h3>
-            <p className="text-sm text-zinc-500">{role}</p>
+          <div className="text-center md:hidden mb-3 w-full px-2">
+            <h3 className="text-lg font-medium text-zinc-900 mb-1 break-words">{title}</h3>
+            <p className="text-xs text-zinc-500 break-words">{role}</p>
           </div>
 
           {/* Mobile: Always show narrative, metadata, and CTA */}
-          <div className="md:hidden flex flex-col p-8 space-y-4">
-            <p className="text-sm text-zinc-600 leading-relaxed">
+          <div className="md:hidden flex flex-col p-0 md:p-8 space-y-3 pb-20 w-full px-2">
+            <p className="text-xs md:text-sm text-zinc-600 leading-relaxed">
               {narrative}
             </p>
-            <p className="text-sm text-zinc-500">
+            <p className="text-xs md:text-sm text-zinc-500">
               {metadata}
             </p>
-            <div className="pt-4">
-              <span className="text-sm font-medium text-zinc-900 border-b border-zinc-900">
+            <div className="pt-2">
+              <span className="text-xs md:text-sm font-medium text-zinc-900 border-b border-zinc-900">
                 Visit Site
               </span>
             </div>
@@ -122,7 +122,7 @@ export default function ProjectFrame({ title, role, narrative, metadata, url, im
 
           {/* Desktop: Hover State - Narrative, Metadata, and CTA */}
           <motion.div
-            className="hidden md:flex absolute inset-0 flex-col justify-center p-8 max-w-2xl mx-auto space-y-4"
+            className="hidden md:flex absolute inset-0 flex-col justify-center p-4 md:p-8 max-w-2xl mx-auto space-y-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: isHovered ? 1 : 0 }}
             transition={{

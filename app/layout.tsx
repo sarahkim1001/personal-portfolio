@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sarah Kim",
   description: "Product Designer and Experimental Artist",
+  icons: {
+    icon: "/img/favicon.png",
+  },
 };
 
 export default function RootLayout({

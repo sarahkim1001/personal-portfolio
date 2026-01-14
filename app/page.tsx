@@ -48,7 +48,7 @@ export default function Home() {
         </motion.div>
 
         {/* Main Content - Inside Card */}
-        <div className="h-full flex flex-col items-center px-4 md:px-8 pt-12 md:pt-16 md:pb-12 overflow-y-auto">
+        <div className="h-full flex flex-col items-center px-4 md:px-8 pt-12 md:pt-16 pb-24 md:pb-12 overflow-y-auto">
           {/* Centerpiece Typography */}
           <div className="text-center mb-8 md:mb-20 w-full">
             <img
@@ -229,7 +229,7 @@ export default function Home() {
 
           {/* Project Artifact - seventhsense.space */}
           <div
-            className="w-full max-w-2xl mt-8 md:mt-24"
+            className="w-full max-w-2xl mt-8 md:mt-24 mb-8 md:mb-0"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -267,7 +267,7 @@ export default function Home() {
               {/* Document Content - Folder/Dossier Opening Effect */}
               {/* Always expanded on mobile, hover on desktop */}
               <motion.div
-                className="p-4 md:p-6 overflow-hidden max-h-[1000px] md:max-h-[100px]"
+                className="p-4 md:p-6 overflow-hidden"
                 animate={{
                   maxHeight: isHovered ? "1000px" : "100px",
                 }}
@@ -275,6 +275,10 @@ export default function Home() {
                   duration: 0.7,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
+                style={{
+                  maxHeight: "none",
+                }}
+                className="md:max-h-[100px]"
               >
                 {/* Show expanded content on mobile always, on desktop only when hovered */}
                 <div className="md:hidden">
@@ -296,8 +300,8 @@ export default function Home() {
                     <div className="mt-6 pt-4 border-t border-zinc-100">
                       <Link
                         href="https://seventhsense.space"
-                        target="_blank"
-                        rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
                         className="text-sm font-medium text-zinc-900 border-b border-zinc-900 hover:border-zinc-600 transition-colors inline-block"
                       >
                         [ Enter Space ]
@@ -327,8 +331,8 @@ export default function Home() {
                       <div className="mt-6 pt-4 border-t border-zinc-100">
                         <Link
                           href="https://seventhsense.space"
-                          target="_blank"
-                          rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
                           className="text-sm font-medium text-zinc-900 border-b border-zinc-900 hover:border-zinc-600 transition-colors inline-block"
                         >
                           [ Enter Space ]

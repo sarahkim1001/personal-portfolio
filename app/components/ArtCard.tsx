@@ -29,7 +29,7 @@ export default function ArtCard({ title, inquiry, medium, year, status, illustra
 
   return (
     <motion.div
-      className="group relative aspect-video bg-white border overflow-hidden"
+      className="group relative md:aspect-video min-h-[500px] md:min-h-0 bg-white border overflow-hidden"
       style={graphPaperStyle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -41,39 +41,23 @@ export default function ArtCard({ title, inquiry, medium, year, status, illustra
         ease: "easeOut",
       }}
     >
-      {/* Initial View - Illustration (only if provided) */}
-      {/* Hide on mobile, show on desktop when not hovered */}
-      {illustration && (
-        <motion.div
-          className="absolute inset-0 flex flex-col items-center justify-center p-8 hidden md:flex"
-          animate={{
-            opacity: isHovered ? 0.3 : 1,
-            scale: isHovered ? 0.95 : 1,
-          }}
-          transition={{
-            duration: 0.3,
-            ease: "easeOut",
-          }}
-        >
-          {illustration}
-        </motion.div>
-      )}
-
-      {/* Mobile: Always show inquiry text */}
-      <div className="md:hidden flex flex-col justify-center p-8 z-10">
-        <div className="max-w-2xl mx-auto space-y-4">
-          <h3 className="text-xl font-medium text-zinc-900 mb-4">
-            {title}
-          </h3>
-          <p className="text-sm text-zinc-600 leading-relaxed">
-            {inquiry}
-          </p>
-        </div>
+      {/* Title - Always visible at top */}
+      <div className="absolute top-0 left-0 right-0 p-4 md:p-8 z-20">
+        <h3 className="text-base md:text-xl font-medium text-zinc-900 break-words">
+          {title}
+        </h3>
       </div>
 
-      {/* Desktop: Hover State - Artistic Inquiry Text */}
+      {/* Mobile: Always show inquiry text */}
+      <div className="md:hidden absolute top-0 left-0 right-0 p-4 md:p-8 z-10 pt-16 pb-20">
+        <p className="text-xs md:text-sm text-zinc-600 leading-relaxed">
+          {inquiry}
+        </p>
+      </div>
+
+      {/* Desktop: Hover State - Inquiry Text */}
       <motion.div
-        className="hidden md:flex absolute inset-0 flex flex-col justify-center p-8 z-10"
+        className="hidden md:flex absolute top-0 left-0 right-0 p-4 md:p-8 z-10 pt-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: isHovered ? 1 : 0 }}
         transition={{
@@ -82,38 +66,24 @@ export default function ArtCard({ title, inquiry, medium, year, status, illustra
           ease: "easeOut",
         }}
       >
-          <div className="max-w-2xl mx-auto space-y-4">
-            <motion.h3
-              className="text-xl font-medium text-zinc-900 mb-4"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.3,
-                delay: 0.2,
-                ease: "easeOut",
-              }}
-            >
-              {title}
-            </motion.h3>
-            <motion.p
-              className="text-sm text-zinc-600 leading-relaxed"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.3,
-                delay: 0.3,
-                ease: "easeOut",
-              }}
-            >
-              {inquiry}
-            </motion.p>
-          </div>
-        </motion.div>
+        <motion.p
+          className="text-sm text-zinc-600 leading-relaxed"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
+          transition={{
+            duration: 0.3,
+            delay: 0.2,
+            ease: "easeOut",
+          }}
+        >
+          {inquiry}
+        </motion.p>
+      </motion.div>
 
       {/* Metadata - Spec Sheet Info at Bottom */}
       {/* Always visible on mobile, opacity changes on desktop hover */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-sm border-t border-zinc-100"
+        className="absolute bottom-0 left-0 right-0 p-3 md:p-4 bg-white/80 backdrop-blur-sm border-t border-zinc-100"
         initial={{ opacity: 0, y: 10 }}
         animate={{
           opacity: isHovered ? 1 : 1,
@@ -124,7 +94,7 @@ export default function ArtCard({ title, inquiry, medium, year, status, illustra
           ease: "easeOut",
         }}
       >
-        <div className="grid grid-cols-3 gap-4 text-xs">
+        <div className="grid grid-cols-3 gap-2 md:gap-4 text-[10px] md:text-xs">
           <div>
             <p className="text-zinc-500 mb-1">Medium</p>
             <p className="text-zinc-900 font-medium">{medium}</p>
