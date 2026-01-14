@@ -6,6 +6,11 @@ import { useState } from "react";
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
+  const [practiceIndexHover, setPracticeIndexHover] = useState({
+    card1: false,
+    card2: false,
+    card3: false,
+  });
 
   // Graph paper background pattern for the card (15-20px squares)
   const graphPaperStyle = {
@@ -19,10 +24,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen relative bg-black flex items-center justify-center p-8 md:p-16">
+    <div className="min-h-screen relative bg-black flex items-center justify-center p-4 md:p-16">
       {/* Floating Index Card Container */}
       <div 
-        className="relative w-full max-w-4xl aspect-[4/6] md:aspect-[3/5] border-4 border-white bg-white"
+        className="relative w-full max-w-4xl min-h-[600px] md:aspect-[3/5] border-4 border-white bg-white"
         style={graphPaperStyle}
       >
         {/* Coordinates with pulse animation - inside card */}
@@ -43,99 +48,171 @@ export default function Home() {
         </motion.div>
 
         {/* Main Content - Inside Card */}
-        <div className="h-full flex flex-col items-center justify-center px-6 md:px-8 py-8 md:py-12 overflow-y-auto">
+        <div className="h-full flex flex-col items-center px-4 md:px-8 py-6 md:pt-8 md:pb-12 overflow-y-auto">
           {/* Centerpiece Typography */}
-          <div className="text-center mb-6 md:mb-8">
+          <div className="text-center mb-4 md:mb-12 w-full">
             <img
               src="/img/spiral.png"
               alt=""
-              className="mx-auto mb-4 md:mb-6 w-24 h-24 md:w-32 md:h-32"
+              className="mx-auto mb-3 md:mb-8 w-20 h-20 md:w-32 md:h-32"
             />
-            <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-zinc-900 mb-2 md:mb-4">
+            <h1 className="text-3xl md:text-5xl font-medium tracking-tight text-zinc-900 mb-2 md:mb-6 px-2">
               creative technologist 
             </h1>
-            <h2 className="text-base md:text-lg text-zinc-500 font-normal">
-              documenting the intersection of cultural history and modern systems
+            <h2 className="text-sm md:text-lg text-zinc-500 font-normal px-2">
+            Tracing the cultural lineage of modern interfaces.
             </h2>
           </div>
 
           {/* Mission Statement */}
-          <div className="w-full max-w-2xl text-center mb-6 md:mb-8">
-            <p className="text-sm md:text-base text-zinc-600 leading-relaxed">
-              I translate the intersection of cognitive psychology and digital infrastructure. My work maps how modern interfaces influence our attention and identity, using research-led design to build systems with greater integrity.
+          <div className="w-full max-w-2xl text-center mb-4 md:mb-16 px-2">
+            <p className="text-xs md:text-base text-zinc-600 leading-relaxed">
+            I build digital systems at the intersection of cognitive psychology and cultural history. My work maps how interfaces influence human attention and identity, using research-led design to develop tools with greater systemic integrity.
             </p>
           </div>
 
           {/* Practice Index */}
-          <div className="w-full max-w-3xl">
-            <h3 className="text-[9px] md:text-[10px] text-zinc-500 uppercase tracking-widest mb-4 md:mb-6 text-center">
+          <div className="w-full max-w-4xl mb-4 md:mb-16">
+            <h3 className="text-[8px] md:text-[10px] text-zinc-500 uppercase tracking-widest mb-3 md:mb-8 text-center">
               PRACTICE INDEX
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {/* Column 1: Functional Design */}
+            <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-6 md:gap-8 md:px-8">
+            {/* Index Card 1: Functional Design */}
             <Link href="/products" className="block group">
               <motion.div
-                className="h-full p-4 md:p-6 border border-zinc-200 bg-white/80 hover:bg-white transition-colors duration-300"
+                className="relative w-48 md:w-56 aspect-[3/5] border bg-white p-4 md:p-6 flex flex-col"
+                initial={{ y: 0, rotate: 0 }}
+                animate={{
+                  borderColor: practiceIndexHover.card1 ? "rgb(161 161 170)" : "rgb(228 228 231)",
+                }}
                 whileHover={{
-                  borderColor: "rgb(212 212 216)",
-                  y: -2,
+                  y: -4,
+                  rotate: -0.5,
                 }}
                 transition={{
-                  duration: 0.3,
+                  duration: 0.4,
                   ease: "easeOut",
                 }}
+                style={{ transformOrigin: "center" }}
+                onMouseEnter={() => setPracticeIndexHover({ ...practiceIndexHover, card1: true })}
+                onMouseLeave={() => setPracticeIndexHover({ ...practiceIndexHover, card1: false })}
               >
-                <h4 className="text-base md:text-lg font-medium text-zinc-900 mb-2 md:mb-3">
+                {/* REF Label - Top Right */}
+                <div className="absolute top-3 md:top-4 right-3 md:right-4">
+                  <p className="text-[8px] md:text-[9px] text-zinc-400 uppercase tracking-widest font-mono">
+                    REF. 01
+                  </p>
+                </div>
+                
+                {/* Card Title */}
+                <h4 className="text-base md:text-lg font-medium text-zinc-800 mt-6 md:mt-8 mb-auto">
                   Functional Design
                 </h4>
-                <p className="text-xs md:text-sm text-zinc-600 leading-relaxed">
+                
+                {/* Description - Hidden by default, fades in on hover */}
+                <motion.p
+                  className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-4"
+                  animate={{ opacity: practiceIndexHover.card1 ? 1 : 0 }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeOut",
+                  }}
+                >
                   Auditing digital interfaces to build systems that support cognitive autonomy and user integrity.
-                </p>
+                </motion.p>
               </motion.div>
             </Link>
 
-            {/* Column 2: Speculative Art */}
+            {/* Index Card 2: Speculative Art */}
             <Link href="/art" className="block group">
               <motion.div
-                className="h-full p-4 md:p-6 border border-zinc-200 bg-white/80 hover:bg-white transition-colors duration-300"
+                className="relative w-48 md:w-56 aspect-[3/5] border bg-white p-4 md:p-6 flex flex-col"
+                initial={{ y: 0, rotate: 0 }}
+                animate={{
+                  borderColor: practiceIndexHover.card2 ? "rgb(161 161 170)" : "rgb(228 228 231)",
+                }}
                 whileHover={{
-                  borderColor: "rgb(212 212 216)",
-                  y: -2,
+                  y: -4,
+                  rotate: 0.5,
                 }}
                 transition={{
-                  duration: 0.3,
+                  duration: 0.4,
                   ease: "easeOut",
                 }}
+                style={{ transformOrigin: "center", marginTop: "1rem" }}
+                onMouseEnter={() => setPracticeIndexHover({ ...practiceIndexHover, card2: true })}
+                onMouseLeave={() => setPracticeIndexHover({ ...practiceIndexHover, card2: false })}
               >
-                <h4 className="text-base md:text-lg font-medium text-zinc-900 mb-2 md:mb-3">
+                {/* REF Label - Top Right */}
+                <div className="absolute top-3 md:top-4 right-3 md:right-4">
+                  <p className="text-[8px] md:text-[9px] text-zinc-400 uppercase tracking-widest font-mono">
+                    REF. 02
+                  </p>
+                </div>
+                
+                {/* Card Title */}
+                <h4 className="text-base md:text-lg font-medium text-zinc-800 mt-6 md:mt-8 mb-auto">
                   Speculative Art
                 </h4>
-                <p className="text-xs md:text-sm text-zinc-600 leading-relaxed">
+                
+                {/* Description - Hidden by default, fades in on hover */}
+                <motion.p
+                  className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-4"
+                  animate={{ opacity: practiceIndexHover.card2 ? 1 : 0 }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeOut",
+                  }}
+                >
                   Mapping the behavioral impact of emerging media through mixed-media research and genealogical traces.
-                </p>
+                </motion.p>
               </motion.div>
             </Link>
 
-            {/* Column 3: Cultural Research */}
+            {/* Index Card 3: Cultural Research */}
             <Link href="/glossary" className="block group">
               <motion.div
-                className="h-full p-4 md:p-6 border border-zinc-200 bg-white/80 hover:bg-white transition-colors duration-300"
+                className="relative w-48 md:w-56 aspect-[3/5] border bg-white p-4 md:p-6 flex flex-col"
+                initial={{ y: 0, rotate: 0 }}
+                animate={{
+                  borderColor: practiceIndexHover.card3 ? "rgb(161 161 170)" : "rgb(228 228 231)",
+                }}
                 whileHover={{
-                  borderColor: "rgb(212 212 216)",
-                  y: -2,
+                  y: -4,
+                  rotate: -0.3,
                 }}
                 transition={{
-                  duration: 0.3,
+                  duration: 0.4,
                   ease: "easeOut",
                 }}
+                style={{ transformOrigin: "center", marginTop: "0.5rem" }}
+                onMouseEnter={() => setPracticeIndexHover({ ...practiceIndexHover, card3: true })}
+                onMouseLeave={() => setPracticeIndexHover({ ...practiceIndexHover, card3: false })}
               >
-                <h4 className="text-base md:text-lg font-medium text-zinc-900 mb-2 md:mb-3">
+                {/* REF Label - Top Right */}
+                <div className="absolute top-3 md:top-4 right-3 md:right-4">
+                  <p className="text-[8px] md:text-[9px] text-zinc-400 uppercase tracking-widest font-mono">
+                    REF. 03
+                  </p>
+                </div>
+                
+                {/* Card Title */}
+                <h4 className="text-base md:text-lg font-medium text-zinc-800 mt-6 md:mt-8 mb-auto">
                   Cultural Research
                 </h4>
-                <p className="text-xs md:text-sm text-zinc-600 leading-relaxed">
+                
+                {/* Description - Hidden by default, fades in on hover */}
+                <motion.p
+                  className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-4"
+                  animate={{ opacity: practiceIndexHover.card3 ? 1 : 0 }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeOut",
+                  }}
+                >
                   Investigating the intersection of human psychology, sociology, and digital sovereignty.
-                </p>
+                </motion.p>
               </motion.div>
             </Link>
             </div>
@@ -143,7 +220,7 @@ export default function Home() {
 
           {/* Project Artifact - seventhsense.space */}
           <div
-            className="w-full max-w-2xl mt-6 md:mt-8"
+            className="w-full max-w-2xl mt-4 md:mt-16"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -161,7 +238,7 @@ export default function Home() {
           >
               {/* Document Header */}
               <motion.div
-                className="p-6 border-b border-zinc-100 bg-zinc-50/50"
+                className="p-4 md:p-6 border-b border-zinc-100 bg-zinc-50/50"
                 animate={{
                   backgroundColor: isHovered ? "rgba(250, 250, 249, 1)" : "rgba(250, 250, 249, 0.5)",
                 }}
@@ -173,14 +250,14 @@ export default function Home() {
                 <p className="text-xs text-zinc-500 uppercase tracking-wider mb-2">
                   Document
                 </p>
-                <h3 className="text-2xl font-medium text-zinc-900">
+                <h3 className="text-lg md:text-2xl font-medium text-zinc-900">
                   seventhsense.space
                 </h3>
               </motion.div>
 
               {/* Document Content - Folder/Dossier Opening Effect */}
               <motion.div
-                className="p-6 overflow-hidden"
+                className="p-4 md:p-6 overflow-hidden"
                 animate={{
                   maxHeight: isHovered ? "1000px" : "100px",
                 }}

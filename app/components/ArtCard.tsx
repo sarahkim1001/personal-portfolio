@@ -28,11 +28,18 @@ export default function ArtCard({ title, inquiry, medium, year, status, illustra
   };
 
   return (
-    <div
-      className="group relative aspect-video bg-white border border-zinc-200 overflow-hidden hover:border-zinc-300"
+    <motion.div
+      className="group relative aspect-video bg-white border overflow-hidden"
       style={graphPaperStyle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      animate={{
+        borderColor: isHovered ? "rgb(161 161 170)" : "rgb(228 228 231)",
+      }}
+      transition={{
+        duration: 0.4,
+        ease: "easeOut",
+      }}
     >
       {/* Initial View - Illustration (only if provided) */}
       {illustration && (
@@ -120,6 +127,6 @@ export default function ArtCard({ title, inquiry, medium, year, status, illustra
           </div>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }

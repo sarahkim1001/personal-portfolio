@@ -36,13 +36,23 @@ export default function ProjectFrame({ title, role, narrative, metadata, url, im
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      <motion.div
+        className="block relative aspect-video bg-white border overflow-hidden"
+        animate={{
+          borderColor: isHovered ? "rgb(161 161 170)" : "rgb(228 228 231)",
+        }}
+        transition={{
+          duration: 0.4,
+          ease: "easeOut",
+        }}
+        style={graphPaperStyle}
+      >
       <Link
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="block relative aspect-video bg-white border border-zinc-200 overflow-hidden hover:border-zinc-300"
+        className="block w-full h-full"
         aria-label={`Visit ${title}`}
-        style={graphPaperStyle}
       >
         {/* Coordinates */}
         {coordinates && (
@@ -144,6 +154,7 @@ export default function ProjectFrame({ title, role, narrative, metadata, url, im
           )}
         </div>
       </Link>
+      </motion.div>
     </div>
   );
 }
