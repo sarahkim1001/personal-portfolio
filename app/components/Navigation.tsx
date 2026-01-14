@@ -31,7 +31,7 @@ export default function Navigation() {
             className="font-bold text-zinc-900 hover:opacity-70 transition-opacity"
             onClick={closeMenu}
           >
-            sarah kim
+            Sarah Kim
           </Link>
           
           {/* Desktop Navigation */}

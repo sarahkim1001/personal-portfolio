@@ -89,7 +89,7 @@ export default function About() {
           {/* The Narrative */}
           <div className="space-y-4 leading-relaxed">
             <p className="text-foreground">
-              Sarah Kim is a Creative Technologist and Product Designer focused on the intersection of human psychology and digital systems. Her work investigates the behavioral impact of emerging media, mapping how modern interfaces influence our attention, memory, and sense of identity.
+              Sarah Kim is a Creative Technologist, Product Designer, and Artist focused on the intersection of human psychology and digital systems. Her work investigates the behavioral impact of emerging media, mapping how modern interfaces influence our attention, memory, and sense of identity.
             </p>
             <p className="text-foreground">
               Born and raised in Palo Alto, Sarah grew up observing the rapid evolution of the technology industry and its profound effect on the local and global landscape. She formalized this interest at NYU, graduating with a Bachelor of Science in Integrated Design and Media and a minor in Media, Culture, and Communication. Her background is grounded in a two-year Liberal Studies core and a formative year spent in Florence, Italy, where she examined the historical relationship between cultural environments, narrative frameworks, and human behavior.
@@ -99,10 +99,10 @@ export default function About() {
           {/* Methodology Section */}
           <div className="space-y-6">
             <h3 className="font-medium text-foreground text-lg">
-              Methodology: Research–Led Design and Speculative Futurecasting
+              Methodology: Research–Led Design & Speculative Futurecasting
             </h3>
             <p className="text-foreground leading-relaxed">
-              Sarah integrates professional product design with a rigorous contemporary art practice to bridge the gap between technical execution and human-centered theory. She functions as a Digital Systems Researcher, applying a multidisciplinary approach to solve modern design challenges:
+              Sarah functions as a Digital Systems Researcher, Developer, and Designer, bridging the gap between technical execution and human-centered theory through a multidisciplinary approach:
             </p>
             
             <ul className="space-y-4">
@@ -111,8 +111,12 @@ export default function About() {
                 <span className="text-zinc-600"> Analyzing how interface patterns—such as infinite scrolls and automated curation—impact cognitive load and user autonomy.</span>
               </li>
               <li>
+                <span className="font-medium text-foreground">Information & Somatic Flow:</span>
+                <span className="text-zinc-600"> Designing minimal, intuitive interfaces that prioritize the felt experience of space and movement. This involves using visual design principles to create calm environments for absorbing complex data through a sense of "intuitive flow".</span>
+              </li>
+              <li>
                 <span className="font-medium text-foreground">Mixed-Media Inquiry:</span>
-                <span className="text-zinc-600"> Using art-led research to prototype complex relationships between users and technology, grounded in art history, sociology, and the study of global cultures.</span>
+                <span className="text-zinc-600"> Using art-led research to prototype relationships between users and technology, grounded in art history, sociology, and the study of global cultures.</span>
               </li>
               <li>
                 <span className="font-medium text-foreground">Digital Integrity:</span>

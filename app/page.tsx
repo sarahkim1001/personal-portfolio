@@ -27,7 +27,7 @@ export default function Home() {
     <div className="min-h-screen relative bg-black flex items-center justify-center p-4 md:p-16">
       {/* Floating Index Card Container */}
       <div 
-        className="relative w-full max-w-4xl min-h-[600px] md:aspect-[3/5] border-4 border-white bg-white"
+        className="relative w-full max-w-4xl min-h-[600px] md:min-h-[1200px] border-4 border-white bg-white"
         style={graphPaperStyle}
       >
         {/* Coordinates with pulse animation - inside card */}
@@ -48,16 +48,16 @@ export default function Home() {
         </motion.div>
 
         {/* Main Content - Inside Card */}
-        <div className="h-full flex flex-col items-center px-4 md:px-8 py-6 md:pt-8 md:pb-12 overflow-y-auto">
+        <div className="h-full flex flex-col items-center px-4 md:px-8 pt-12 md:pt-16 md:pb-12 overflow-y-auto">
           {/* Centerpiece Typography */}
-          <div className="text-center mb-4 md:mb-12 w-full">
+          <div className="text-center mb-8 md:mb-20 w-full">
             <img
               src="/img/spiral.png"
               alt=""
               className="mx-auto mb-3 md:mb-8 w-20 h-20 md:w-32 md:h-32"
             />
             <h1 className="text-3xl md:text-5xl font-medium tracking-tight text-zinc-900 mb-2 md:mb-6 px-2">
-              creative technologist 
+             Sarah Kim: Creative Technologist 
             </h1>
             <h2 className="text-sm md:text-lg text-zinc-500 font-normal px-2">
             Tracing the cultural lineage of modern interfaces.
@@ -65,14 +65,14 @@ export default function Home() {
           </div>
 
           {/* Mission Statement */}
-          <div className="w-full max-w-2xl text-center mb-4 md:mb-16 px-2">
+          <div className="w-full max-w-2xl text-center mb-8 md:mb-24 px-2">
             <p className="text-xs md:text-base text-zinc-600 leading-relaxed">
             I build digital systems at the intersection of cognitive psychology and cultural history. My work maps how interfaces influence human attention and identity, using research-led design to develop tools with greater systemic integrity.
             </p>
           </div>
 
           {/* Practice Index */}
-          <div className="w-full max-w-4xl mb-4 md:mb-16">
+          <div className="w-full max-w-4xl mb-8 md:mb-24">
             <h3 className="text-[8px] md:text-[10px] text-zinc-500 uppercase tracking-widest mb-3 md:mb-8 text-center">
               PRACTICE INDEX
             </h3>
@@ -220,7 +220,7 @@ export default function Home() {
 
           {/* Project Artifact - seventhsense.space */}
           <div
-            className="w-full max-w-2xl mt-4 md:mt-16"
+            className="w-full max-w-2xl mt-8 md:mt-24"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -232,8 +232,8 @@ export default function Home() {
               boxShadow: isHovered ? "0 4px 6px -1px rgba(0, 0, 0, 0.1)" : "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
             }}
             transition={{
-              duration: 0.4,
-              ease: "easeOut",
+              duration: 0.7,
+              ease: [0.25, 0.1, 0.25, 1],
             }}
           >
               {/* Document Header */}
@@ -243,8 +243,8 @@ export default function Home() {
                   backgroundColor: isHovered ? "rgba(250, 250, 249, 1)" : "rgba(250, 250, 249, 0.5)",
                 }}
                 transition={{
-                  duration: 0.4,
-                  ease: "easeOut",
+                  duration: 0.7,
+                  ease: [0.25, 0.1, 0.25, 1],
                 }}
               >
                 <p className="text-xs text-zinc-500 uppercase tracking-wider mb-2">
@@ -262,8 +262,8 @@ export default function Home() {
                   maxHeight: isHovered ? "1000px" : "100px",
                 }}
                 transition={{
-                  duration: 0.4,
-                  ease: "easeOut",
+                  duration: 0.7,
+                  ease: [0.25, 0.1, 0.25, 1],
                 }}
               >
                 {isHovered ? (
@@ -271,9 +271,9 @@ export default function Home() {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
-                      duration: 0.4,
-                      delay: 0.15,
-                      ease: "easeOut",
+                      duration: 0.6,
+                      delay: 0.2,
+                      ease: [0.25, 0.1, 0.25, 1],
                     }}
                   >
                     <p className="text-sm text-zinc-600 leading-relaxed mb-4">
