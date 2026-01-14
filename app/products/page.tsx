@@ -16,7 +16,9 @@ export default function Products() {
         <ProjectFrame
           title="seventhsense.space"
           role="Creative Technologist & Digital Systems Researcher"
-          narrative="Launched in January 2026, seventhsense.space is a research-led platform exploring the intersection of human psychology and digital systems. The project functions as an 'integrity layer' for contemporary technoculture, performing audits on how modern interfaces reconfigure human attention and identity. Inspired by the work of Donna Haraway, the platform investigates the 'cyborgian organism' and what it means to be hybrid of biology and technology in the Information Age."
+          narrative="Launched in January 2026, seventhsense.space is a research-led platform investigating the intersection of cognitive psychology and digital systems. The project functions as a diagnostic layer for contemporary culture, performing audits on how modern interfaces influence human attention and the formation of identity.
+
+Drawing from technics theory and cultural history, the platform examines the evolving relationship between biological faculties and technical environments. By mapping the ways digital tools store, transmit, and transmute information, the project seeks to develop design frameworks with greater systemic integrity and a deeper respect for human presence."
           metadata="Launched January 2026"
           url="https://seventhsense.space"
           graphPaper={true}

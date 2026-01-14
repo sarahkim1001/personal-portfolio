@@ -36,7 +36,7 @@ export default function RootLayout({
         <Navigation />
         <ScrollProgress />
         <main className="pt-20">
-          {children}
+        {children}
         </main>
         <Footer />
       </body>

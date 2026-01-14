@@ -57,7 +57,7 @@ export default function Home() {
               className="mx-auto mb-3 md:mb-8 w-20 h-20 md:w-32 md:h-32"
             />
             <h1 className="text-3xl md:text-5xl font-medium tracking-tight text-zinc-900 mb-2 md:mb-6 px-2">
-             Sarah Kim: Creative Technologist 
+             Creative Technology for Humanity
             </h1>
             <h2 className="text-sm md:text-lg text-zinc-500 font-normal px-2">
             tracing the cultural lineage of modern interfaces.
@@ -67,7 +67,7 @@ export default function Home() {
           {/* Mission Statement */}
           <div className="w-full max-w-2xl text-center mb-8 md:mb-24 px-2">
             <p className="text-xs md:text-base text-zinc-600 leading-relaxed">
-            I build digital systems at the intersection of cognitive psychology and cultural history. My work maps how interfaces influence human attention and identity, using research-led design to develop tools with greater systemic integrity.
+            Sarah designs digital systems at the intersection of psychology and culture. She build tools that map human attention and restore systemic integrity.
             </p>
           </div>
 
@@ -270,16 +270,16 @@ export default function Home() {
               {/* Mobile: Always show expanded content */}
               <div className="md:hidden p-4 md:p-6">
                 <p className="text-xs md:text-sm text-zinc-600 leading-relaxed mb-4">
-                  Launched in January 2026, seventhsense.space is a research-led platform exploring the intersection of human psychology and digital systems. The project functions as an 'integrity layer' for contemporary technoculture, performing audits on how modern interfaces reconfigure human attention and identity.
+                Launched in January 2026, seventhsense.space is a research-led platform investigating the intersection of cognitive psychology and digital systems. The project functions as a diagnostic layer for contemporary culture, performing audits on how modern interfaces influence human attention and the formation of identity.
                 </p>
                 <p className="text-xs md:text-sm text-zinc-500">
-                  Inspired by the work of Donna Haraway, the platform investigates the 'cyborgian organism'—the lived reality of being a hybrid of biology and technology in the Information Age.
+                Drawing from technics theory and cultural history, the platform examines the evolving relationship between biological faculties and technical environments. By mapping the ways digital tools store, transmit, and transmute information, the project seeks to develop design frameworks with greater systemic integrity and a deeper respect for human presence.
                 </p>
                 <div className="mt-6 pt-4 border-t border-zinc-100">
                   <Link
                     href="https://seventhsense.space"
-                    target="_blank"
-                    rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
                     className="text-xs md:text-sm font-medium text-zinc-900 border-b border-zinc-900 hover:border-zinc-600 transition-colors inline-block"
                   >
                     [ Enter Space ]
@@ -309,16 +309,16 @@ export default function Home() {
                     }}
                   >
                     <p className="text-sm text-zinc-600 leading-relaxed mb-4">
-                      Launched in January 2026, seventhsense.space is a research-led platform exploring the intersection of human psychology and digital systems. The project functions as an 'integrity layer' for contemporary technoculture, performing audits on how modern interfaces reconfigure human attention and identity.
+                    Launched in January 2026, seventhsense.space is a research-led platform investigating the intersection of cognitive psychology and digital systems. The project functions as a diagnostic layer for contemporary culture, performing audits on how modern interfaces influence human attention and the formation of identity.
                     </p>
                     <p className="text-sm text-zinc-500">
-                      Inspired by the work of Donna Haraway, the platform investigates the 'cyborgian organism'—the lived reality of being a hybrid of biology and technology in the Information Age.
+                    Drawing from technics theory and cultural history, the platform examines the evolving relationship between biological faculties and technical environments. By mapping the ways digital tools store, transmit, and transmute information, the project seeks to develop design frameworks with greater systemic integrity and a deeper respect for human presence.
                     </p>
                     <div className="mt-6 pt-4 border-t border-zinc-100">
                       <Link
                         href="https://seventhsense.space"
-                        target="_blank"
-                        rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
                         className="text-sm font-medium text-zinc-900 border-b border-zinc-900 hover:border-zinc-600 transition-colors inline-block"
                       >
                         [ Enter Space ]

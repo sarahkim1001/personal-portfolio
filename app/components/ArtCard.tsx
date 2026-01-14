@@ -42,14 +42,14 @@ export default function ArtCard({ title, inquiry, medium, year, status, illustra
       }}
     >
       {/* Title - Always visible at top */}
-      <div className="absolute top-0 left-0 right-0 p-4 md:p-8 z-20">
+      <div className="absolute top-0 left-0 right-0 p-4 md:p-8 z-20 pb-4 md:pb-6">
         <h3 className="text-base md:text-xl font-medium text-zinc-900 break-words">
           {title}
         </h3>
       </div>
 
       {/* Mobile: Always show inquiry text */}
-      <div className="md:hidden absolute top-0 left-0 right-0 p-4 md:p-8 z-10 pt-16 pb-20">
+      <div className="md:hidden absolute top-0 left-0 right-0 p-4 md:p-8 z-10 pt-20 md:pt-24 pb-20">
         <p className="text-xs md:text-sm text-zinc-600 leading-relaxed">
           {inquiry}
         </p>
@@ -57,7 +57,7 @@ export default function ArtCard({ title, inquiry, medium, year, status, illustra
 
       {/* Desktop: Hover State - Inquiry Text */}
       <motion.div
-        className="hidden md:flex absolute top-0 left-0 right-0 p-4 md:p-8 z-10 pt-20"
+        className="hidden md:flex absolute top-0 left-0 right-0 p-4 md:p-8 z-10 pt-24 md:pt-28"
         initial={{ opacity: 0 }}
         animate={{ opacity: isHovered ? 1 : 0 }}
         transition={{

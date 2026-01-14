@@ -30,8 +30,9 @@ export default function Art() {
           year="2026"
           status="In-Progress"
         />
+      
         <ArtCard
-          title="Br"
+          title="Breaking the Loop"
           inquiry="A digital zine investigating the psychological impact of infinite scroll interfaces. Through experimental typography and narrative structure, this project maps how automated curation influences attention and cultural consumption patterns."
           medium="Mixed-Media"
           year="2026"

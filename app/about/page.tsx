@@ -89,38 +89,38 @@ export default function About() {
           {/* The Narrative */}
           <div className="space-y-4 leading-relaxed">
             <p className="text-foreground">
-              Sarah Kim is a Creative Technologist, Product Designer, and Artist focused on the intersection of human psychology and digital systems. Her work investigates the behavioral impact of emerging media, mapping how modern interfaces influence our attention, memory, and sense of identity.
+              Sarah Kim is a Creative Technologist and Product Designer practicing at the intersection of cognitive psychology and digital systems. Her work investigates the behavioral impact of emerging media, mapping how modern interfaces influence human attention, memory, and the construction of identity.
             </p>
             <p className="text-foreground">
-              Born and raised in Palo Alto, Sarah grew up observing the rapid evolution of the technology industry and its profound effect on the local and global landscape. She formalized this interest at NYU, graduating with a Bachelor of Science in Integrated Design and Media and a minor in Media, Culture, and Communication. Her background is grounded in a two-year Liberal Studies core and a formative year spent in Florence, Italy, where she examined the historical relationship between cultural environments, narrative frameworks, and human behavior.
+              Born and raised in Palo Alto, Sarah developed an early fascination with the rapid evolution of the technology industry and its profound effect on the global landscape. She formalized this interest at NYU, graduating with a Bachelor of Science in Integrated Design and Media. Her academic foundation—grounded in a Liberal Studies core and a formative year in Florence, Italy—informs her analysis of the historical relationship between cultural environments, narrative frameworks, and human behavior.
             </p>
           </div>
 
           {/* Methodology Section */}
           <div className="space-y-6">
             <h3 className="font-medium text-foreground text-lg">
-              Methodology: Research–Led Design & Speculative Futurecasting
+              Methodology: Research-Led Design & Systems Thinking
             </h3>
             <p className="text-foreground leading-relaxed">
-              Sarah functions as a Digital Systems Researcher, Developer, and Designer, bridging the gap between technical execution and human-centered theory through a multidisciplinary approach:
+              Sarah functions as a Digital Systems Researcher and Developer, bridging the gap between technical execution and human-centered theory. Her multidisciplinary approach focuses on:
             </p>
             
             <ul className="space-y-4">
               <li>
                 <span className="font-medium text-foreground">Cognitive Auditing:</span>
-                <span className="text-zinc-600"> Analyzing how interface patterns—such as infinite scrolls and automated curation—impact cognitive load and user autonomy.</span>
+                <span className="text-zinc-600"> Analyzing how interface patterns—such as automated curation and infinite consumption models—impact cognitive load and user autonomy.</span>
               </li>
               <li>
-                <span className="font-medium text-foreground">Information & Somatic Flow:</span>
-                <span className="text-zinc-600"> Designing minimal, intuitive interfaces that prioritize the felt experience of space and movement. This involves using visual design principles to create calm environments for absorbing complex data through a sense of "intuitive flow".</span>
+                <span className="font-medium text-foreground">Somatic Information Flow:</span>
+                <span className="text-zinc-600"> Designing intuitive systems that prioritize the biological experience of space and movement, using visual principles to create grounded environments for absorbing complex data.</span>
               </li>
               <li>
                 <span className="font-medium text-foreground">Mixed-Media Inquiry:</span>
-                <span className="text-zinc-600"> Using art-led research to prototype relationships between users and technology, grounded in art history, sociology, and the study of global cultures.</span>
+                <span className="text-zinc-600"> Utilizing art-led prototyping to investigate the evolving relationship between users and technology, grounded in art history and sociology.</span>
               </li>
               <li>
-                <span className="font-medium text-foreground">Digital Integrity:</span>
-                <span className="text-zinc-600"> Designing systems that prioritize human presence and somatic awareness, ensuring technology respects biological boundaries rather than overwhelming them.</span>
+                <span className="font-medium text-foreground">Systemic Integrity:</span>
+                <span className="text-zinc-600"> Developing digital architectures that prioritize human presence and somatic awareness, ensuring technology respects biological boundaries rather than overwhelming them.</span>
               </li>
             </ul>
           </div>
@@ -129,7 +129,7 @@ export default function About() {
           <div className="space-y-4 leading-relaxed py-24">
             <h3 className="font-medium text-foreground text-lg">The Vision</h3>
             <p className="text-foreground">
-              Sarah lives to foster a more intentional relationship with our digital environments. By examining the hidden psychological infrastructures of everyday tools, she seeks to move design toward a state of Digital Sovereignty—where technology empowers the individual to reclaim attention and navigate the world with greater clarity and presence.
+              Sarah's mission is to foster a more intentional relationship with our digital environments. By auditing the hidden psychological infrastructures of everyday tools, she seeks to move design toward a state of Digital Sovereignty—where technology empowers the individual to reclaim their attention and navigate the world with greater clarity and presence.
             </p>
           </div>
         </div>
