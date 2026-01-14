@@ -5,7 +5,8 @@ export default function Glossary() {
         Glossary
       </h1>
       <h2 className="text-lg text-zinc-500 max-w-2xl mb-16">
-        A shared vocabulary for the intersection of technology, design, and experience.
+        A shared vocabulary for the intersection of technology, design, and experience. <br></br>
+        More than words: the embodied experiences of a digitally-mediated existence.
       </h2>
       <p className="max-w-xl text-zinc-600 leading-relaxed mb-24">
         This index serves as a reference for the concepts and methodologies that inform my work. It is an evolving collection of terms used to examine our digital environments and the systems we inhabit.

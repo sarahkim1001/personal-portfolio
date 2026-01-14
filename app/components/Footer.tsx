@@ -2,15 +2,15 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="mt-32 pt-16 border-t border-zinc-100">
+    <footer className="mt-32 pt-16 pb-32 border-t border-zinc-200/30">
       <div className="max-w-6xl mx-auto px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xs font-medium text-foreground mb-3">contact</h3>
+            <h3 className="text-sm font-medium text-foreground mb-3">contact</h3>
             <div className="flex flex-col gap-2">
               <a 
                 href="mailto:sarahkim1001@gmail.com" 
-                className="text-xs text-zinc-600 hover:text-foreground transition-colors"
+                className="text-sm text-zinc-600 hover:text-foreground transition-colors"
               >
                 sarahkim1001@gmail.com
               </a>
@@ -18,7 +18,7 @@ export default function Footer() {
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-xs text-zinc-600 hover:text-foreground transition-colors"
+                className="text-sm text-zinc-600 hover:text-foreground transition-colors"
               >
                 linkedin
               </a>
@@ -26,17 +26,17 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="text-xs font-medium text-foreground mb-3">location</h3>
-            <p className="text-xs text-zinc-600">
+            <h3 className="text-sm font-medium text-foreground mb-3">location</h3>
+            <p className="text-sm text-zinc-600">
               palo alto, ca
             </p>
           </div>
           
           <div>
-            <h3 className="text-xs font-medium text-foreground mb-3">documents</h3>
+            <h3 className="text-sm font-medium text-foreground mb-3">documents</h3>
             <Link 
               href="#" 
-              className="text-xs text-zinc-600 hover:text-foreground transition-colors"
+              className="text-sm text-zinc-600 hover:text-foreground transition-colors"
             >
               resume/cv
             </Link>
